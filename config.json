@@ -1,0 +1,79 @@
+{
+  "version": "2.0.0",
+  "description": "AI Article Processor Configuration",
+
+  "models": {
+    "directory": "models",
+    "cache_enabled": true,
+    "verification_enabled": true
+  },
+
+  "processing": {
+    "max_chunk_tokens": 512,
+    "summary_max_length": 50,
+    "summary_min_length": 20,
+    "device": 0,
+    "batch_size": 1,
+    "timeout": 300
+  },
+
+  "scraping": {
+    "user_agents": [
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    ],
+    "timeout": 30,
+    "max_retries": 3,
+    "delay_between_requests": 1.0,
+    "min_content_length": 500,
+    "max_content_length": 100000,
+    "wikipedia_max_length": 500000,
+    "min_words_general": 50,
+    "min_words_wikipedia": 20,
+    "unique_ratio_threshold_general": 0.3,
+    "unique_ratio_threshold_wikipedia": 0.15
+  },
+
+  "output": {
+    "directory": ".",
+    "timestamp_format": "%Y%m%d_%H%M%S",
+    "save_json": true,
+    "save_csv": true
+  },
+
+  "logging": {
+    "level": "INFO",
+    "file": "article_processor.log",
+    "max_file_size": "10 MB",
+    "backup_count": 5
+  },
+
+  "categories": {
+    "default": [
+      "Technology",
+      "Science",
+      "History",
+      "Art",
+      "Sports",
+      "Politics",
+      "Education",
+      "Health",
+      "Business",
+      "Entertainment"
+    ],
+    "custom_allowed": true
+  },
+
+  "performance": {
+    "gpu_memory_fraction": 0.8,
+    "cpu_threads": null,
+    "cache_size_mb": 512
+  },
+
+  "experimental": {
+    "batch_processing": false,
+    "async_operations": false,
+    "advanced_chunking": true
+  }
+}
